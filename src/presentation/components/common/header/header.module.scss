@@ -1,0 +1,144 @@
+@use "../../../styles/themes/light.scss" as *;
+@use "../../../styles/themes/mixins.scss" as *;
+
+.container {
+  background-color: #1c1c1c; /* Fallback color */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff;
+  width: 100%;
+  min-height: 100vh; /* Ensure full viewport height */
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+
+  &::before {
+    content: none; /* Overlay handled in inline style */
+  }
+}
+
+.box-section {
+  @include container(1380px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 8rem 2rem 4rem 2rem; /* Top padding for navbar space */
+  position: relative;
+  z-index: 2;
+  gap: 4rem;
+
+  @media (max-width: 994px) {
+    flex-direction: column;
+    padding-top: 8rem; /* Keep space for navbar */
+    gap: 3rem;
+    align-items: flex-start;
+  }
+}
+
+.text-section {
+  flex: 1;
+  max-width: 650px;
+  text-align: left;
+  animation: fadeUp 0.8s ease-out;
+
+  .subtitle {
+    font-family: "Satoshi", sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1.5rem;
+    display: block;
+    position: relative;
+  }
+
+  .title {
+    font-family: "Satoshi", sans-serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    color: #fff;
+  }
+
+  .paragraph {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2.5rem;
+    max-width: 90%;
+    text-align: left; /* Explicitly requested left alignment */
+  }
+
+  @media (max-width: 994px) {
+    width: 100%;
+    text-align: center;
+    max-width: 100%;
+
+    .subtitle {
+      padding-left: 0;
+      display: inline-block;
+
+      &::before {
+        display: none;
+      }
+    }
+
+    .title {
+      font-size: 2.5rem;
+      text-align: center;
+    }
+
+    .paragraph {
+      text-align: center; /* Usually center looks better on mobile, but respecting left align if critical, here defaulting to center for mobile layout balance */
+      margin: 0 auto 2rem auto;
+    }
+  }
+
+  @media (max-width: 624px) {
+    .title {
+      font-size: 2rem;
+    }
+
+    .paragraph {
+      font-size: 1rem;
+    }
+  }
+}
+
+.form-section {
+  flex: 0 0 480px; /* Increased from 480px */
+  width: 100%;
+  max-width: 580px; /* Increased from 550px */
+  animation: fadeIn 1s ease-out 0.3s backwards;
+
+  @media (max-width: 994px) {
+    width: 100%;
+    max-width: 100%;
+    flex: auto;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

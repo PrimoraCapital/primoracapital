@@ -1,0 +1,27 @@
+.carousel {
+  position: relative;
+  width: 100%;
+}
+
+.viewport {
+  overflow: hidden;
+}
+
+.content {
+  display: flex;
+  margin-left: -1rem; /* default gap */
+  
+  &.horizontal {
+    flex-direction: row;
+  }
+  
+  &.vertical {
+    flex-direction: column;
+  }
+}
+
+.item {
+  min-width: 0;
+  flex: 0 0 100%;
+  padding-left: 1rem; /* default gap */
+}

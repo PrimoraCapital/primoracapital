@@ -1,0 +1,26 @@
+.highlighter {
+  position: relative;
+  display: inline-block;
+  padding: 0 0.25rem;
+  /* z-index will be handled by context if needed, but the bg is -10 */
+}
+
+.relative {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.underline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+}
+
+.bg {
+  position: absolute;
+  inset: 0;
+  z-index: -10;
+}

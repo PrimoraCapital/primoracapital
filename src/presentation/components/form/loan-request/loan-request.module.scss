@@ -1,0 +1,117 @@
+@use "../../../styles/themes/light.scss" as *;
+@use "../../../styles/themes/mixins.scss" as *;
+
+.form {
+  @include display-flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  width: 100%;
+
+  .title {
+    text-align: center;
+    color: #1c1c1c;
+    font-family: "Satoshi", sans-serif;
+    font-size: 1.5rem;
+    line-height: 1.3;
+    font-weight: 700;
+    margin-bottom: 1rem;
+
+    @media (max-width: 994px) {
+      font-size: 1.25rem;
+    }
+  }
+
+  .paragraphSubtitle {
+    text-align: center;
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    font-weight: 400;
+    font-family: "Satoshi", sans-serif;
+    margin-bottom: 1.5rem;
+  }
+
+  .valueMin {
+    color: #666;
+    font-size: 0.75rem;
+    font-weight: 500;
+    font-family: "Satoshi", sans-serif;
+    margin-top: 0.25rem;
+    display: block;
+    text-align: right;
+  }
+
+  .input-text {
+    font-family: "Satoshi", sans-serif;
+    outline: none;
+    transition: all 0.3s ease;
+    border: none;
+    border-bottom: 2px solid #e0e0e0;
+    color: #1c1c1c;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-top: 1.2rem;
+    padding: 0.8rem 0;
+    width: 100%;
+    background: transparent;
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+      -webkit-box-shadow: 0 0 0 30px white inset !important;
+      -webkit-text-fill-color: #1c1c1c !important;
+    }
+
+    &::placeholder {
+      color: #aaa;
+      font-weight: 400;
+    }
+
+    &:focus {
+      border-bottom: 2px solid #eed56d; /* Gold accent */
+    }
+  }
+
+  /* Custom Select Style Override if possible, otherwise standard select */
+  select.input-text {
+    cursor: pointer;
+  }
+
+  .terms-box {
+    @include display-flex(center, flex-start);
+    margin-top: 1rem;
+
+    .checkbox {
+      accent-color: #eed56d;
+      width: 1rem;
+      height: 1rem;
+      cursor: pointer;
+    }
+
+    .label-checkbox {
+      color: #666;
+      font-size: 0.8rem;
+      padding-left: 0.5rem;
+      font-family: "Satoshi", sans-serif;
+    }
+  }
+
+  .error {
+    color: #e74c3c;
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
+    font-family: "Satoshi", sans-serif;
+  }
+
+  .input-text-error {
+    border-bottom-color: #e74c3c !important;
+  }
+
+  .margin-btn {
+    margin-bottom: 2rem;
+  }
+}

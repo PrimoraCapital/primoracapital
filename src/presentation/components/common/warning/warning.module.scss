@@ -1,0 +1,33 @@
+@use '../../../styles/themes/light.scss' as *;
+@use '../../../styles/themes/mixins.scss' as *;
+
+.container {
+  position: fixed;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  background-color: $color-snow;
+  top: 88px;
+  left: 0;
+  right: 0;
+  padding: 0rem 2rem;
+  z-index: 90;
+  .box-section {
+    @include container(1280px, 0 auto);
+    @include display-flex(center, space-between);
+    .title {
+      font-size: $font-small;
+      font-weight: $weight-default;
+      padding: 1.2rem 0;
+      line-height: 1.2rem;
+      padding-right: 1.5rem;
+    }
+    .icon {
+      @include hover;
+      font-size: $font-default;
+      &:hover {
+        transform: scale(1.1);
+      }
+      @media (max-width: 724px) {
+      }
+    }
+  }
+}

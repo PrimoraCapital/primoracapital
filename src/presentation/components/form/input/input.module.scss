@@ -1,0 +1,11 @@
+@use '../../../styles/themes/light.scss' as *;
+@use '../../../styles/themes/mixins.scss' as *;
+
+.input-normal {
+  display: flex;
+  font-family: $font-default;
+  font-size: $font-small;
+  border-radius: $radii-default;
+  margin: 0.7rem 0;
+  padding: 0.6rem 1rem;
+}

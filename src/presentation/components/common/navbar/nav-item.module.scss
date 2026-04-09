@@ -1,0 +1,29 @@
+@use "../../../styles/themes/light.scss" as *;
+@use "../../../styles/themes/mixins.scss" as *;
+
+.single-nav-item {
+  position: relative;
+  width: 100%;
+  border-bottom: 1px solid #f9f9f9;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  .item-label {
+    @include display-flex(center, space-between);
+    @include hover;
+    color: #1c1c1c;
+    font-size: 1.1rem;
+    padding: 1rem 0;
+    width: 100%;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    font-weight: 400;
+
+    &:hover {
+      color: #eed56d;
+      padding-left: 0.5rem; /* Subtle movement */
+    }
+  }
+}

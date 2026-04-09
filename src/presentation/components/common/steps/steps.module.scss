@@ -1,0 +1,148 @@
+@use "../../../styles/themes/light.scss" as *;
+@use "../../../styles/themes/mixins.scss" as *;
+
+.section {
+  background-color: #fcfcfc;
+  width: 100%;
+  padding: 4.5rem 0;
+
+  @media (max-width: 768px) {
+    padding: 2.75rem 0;
+  }
+
+  .container {
+    max-width: 1340px;
+    margin: 0 auto;
+    padding: 0 1.075rem;
+
+    @media (max-width: 768px) {
+      padding: 0 1rem;
+    }
+  }
+
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 3rem;
+    gap: 0.75rem;
+
+    .badge {
+      background-color: transparent;
+      color: #eed56d;
+      padding: 0.5rem 1rem;
+      border-radius: 9999px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      font-family: "Satoshi", sans-serif;
+      text-transform: uppercase;
+      border: 1px solid #eed56d;
+    }
+
+    .sectionTitle {
+      font-size: 2.5rem;
+      font-weight: 500;
+      color: #1c1c1c;
+      text-align: left;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
+      font-family: "Satoshi", sans-serif;
+      max-width: 700px;
+      @media (max-width: 768px) {
+        font-size: 2rem;
+        padding: 0 1rem;
+      }
+    }
+
+    .sectionSubtitle {
+      color: #666;
+      font-size: 0.95rem;
+      text-align: left;
+      max-width: 700px;
+      margin: 0;
+      line-height: 1.6;
+      font-family: "Satoshi", sans-serif;
+      @media (max-width: 768px) {
+        font-size: 1rem;
+        padding: 0 1rem;
+      }
+    }
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+
+    @media (max-width: 1024px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 640px) {
+      grid-template-columns: 1fr;
+    }
+
+    .card {
+      background-color: #f5f6fa;
+      border-radius: 12px;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 300px;
+      transition: all 0.3s ease;
+
+      &:hover {
+        transform: scale(1.03);
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.07);
+      }
+
+      &.large {
+        grid-column: span 2;
+
+        @media (max-width: 640px) {
+          grid-column: span 1;
+        }
+      }
+
+      .icon {
+        color: #1c1c1c;
+        margin-bottom: 2rem;
+
+        svg {
+          stroke-width: 1.5;
+        }
+      }
+
+      .content {
+        .cardTitle {
+          color: #1c1c1c;
+          font-size: 1.5rem;
+          font-weight: 500;
+          margin-bottom: 0.5rem;
+          font-family: "Satoshi", sans-serif;
+          letter-spacing: -0.02em;
+        }
+
+        .cardDesc {
+          color: #666;
+          font-size: 1rem;
+          line-height: 1.5;
+          font-family: "Satoshi", sans-serif;
+        }
+      }
+    }
+
+    &:hover .card {
+      opacity: 0.6;
+      transform: scale(0.98);
+      box-shadow: none;
+    }
+
+    &:hover .card:hover {
+      opacity: 1;
+      transform: scale(1.03);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.07);
+    }
+  }
+}
