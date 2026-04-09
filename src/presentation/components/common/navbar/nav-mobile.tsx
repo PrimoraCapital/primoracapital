@@ -15,6 +15,10 @@ const NavMobile = ({ closeMenu }: NavMobileProps) => {
 
   const handleClick = (link: string) => {
     closeMenu();
+    if (link.startsWith("http")) {
+      window.open(link, "_blank", "noopener,noreferrer");
+      return;
+    }
     if (link.startsWith("#") || link.startsWith("/#")) {
       const id = link.includes("#")
         ? link.split("#")[1]

@@ -143,12 +143,21 @@ export default function Footer() {
               const href = item.link ?? "#";
               const isHash = href.includes("#");
               const id = isHash ? href.split("#")[1] : null;
+              const isExternal = href.startsWith("http");
               return (
                 <li key={idx}>
                   {isHome && isHash && id ? (
                     <a
                       href={`#${id}`}
                       onClick={(e) => handleSmoothScroll(e, id)}
+                    >
+                      {item.label}
+                    </a>
+                  ) : isExternal ? (
+                    <a
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
                       {item.label}
                     </a>

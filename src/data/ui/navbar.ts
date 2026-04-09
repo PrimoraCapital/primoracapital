@@ -11,7 +11,7 @@ export const MENU: NavbarItemProps[] = [
   },
   {
     label: 'Cartas contempladas',
-    link: '/#cartas-contempladas',
+    link: 'https://www.primoracontempladas.com.br',
   },
   {
     label: 'Quem somos',

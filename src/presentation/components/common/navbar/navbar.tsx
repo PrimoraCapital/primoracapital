@@ -97,6 +97,20 @@ const Navbar = () => {
                     />
                   )}
                 </a>
+              ) : item.link && item.link.startsWith("http") ? (
+                <a
+                  href={item.link}
+                  className={S["link-text"]}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span>{item.label}</span>
+                  {item.children && (
+                    <IconChevronDown
+                      className={`${S["arrow-icon"]} ${S["rotate-180"]}`}
+                    />
+                  )}
+                </a>
               ) : (
                 <Link href={item.link ?? "#"} className={S["link-text"]}>
                   <span>{item.label}</span>
