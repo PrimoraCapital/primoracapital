@@ -16,6 +16,8 @@ export async function POST(request: Request) {
     }
 
     const resend = new Resend(apiKey);
+    const to = process.env.RESEND_TO || "tom.guina@gmail.com";
+    const from = process.env.RESEND_FROM || "onboarding@resend.dev";
 
     const body = await request.json();
     const { nome, email, whatsapp, tipoSolicitacao, valor } = body;
@@ -28,8 +30,8 @@ export async function POST(request: Request) {
     });
 
     const { data, error } = await resend.emails.send({
-      from: "onboarding@resend.dev",
-      to: "victorh.pedr@gmail.com",
+      from,
+      to,
       subject: "Nova Simulação de Consórcio",
       html: [
         "<p>Nova simulação de consórcio recebida:</p>",
