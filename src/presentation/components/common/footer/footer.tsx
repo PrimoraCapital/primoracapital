@@ -174,8 +174,7 @@ export default function Footer() {
       </div>
       <div className={styles.bottom}>
         <div className={styles.location}>
-          Rua João Teixeira da Frota, 1106 Sala 15 - São Pedro, SP, CEP
-          13521-150
+          Rua das Acácias, Jardim São Paulo, Americana - SP, CEP 13468-150
         </div>
         <div className={styles.copyright}>
           A PRIMORA Capital é uma consultoria independente que intermedia
