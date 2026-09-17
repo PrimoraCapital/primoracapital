@@ -174,7 +174,7 @@ export default function Footer() {
       </div>
       <div className={styles.bottom}>
         <div className={styles.location}>
-          Rua das Acácias, Jardim São Paulo, Americana - SP, CEP 13468-150
+          Rua das Acácias, nº 138, Jardim São Paulo, Americana - SP, CEP 13468-150
         </div>
         <div className={styles.copyright}>
           A PRIMORA Capital é uma consultoria independente que intermedia
